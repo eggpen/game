@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Esc/Esc.gd" type="Script" id=2]
+[ext_resource path="res://Esc/001.png" type="Texture" id=3]
+
+[node name="Esc" type="Popup"]
+margin_left = -128.0
+margin_top = -64.0
+margin_right = 128.0
+margin_bottom = 64.0
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 128, 64 )
+scale = Vector2( 2, 1.71429 )
+texture = ExtResource( 3 )
+
+[node name="Yes" type="Button" parent="."]
+margin_left = 56.0
+margin_top = 80.0
+margin_right = 96.0
+margin_bottom = 100.0
+
+[node name="Label" type="Label" parent="Yes"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "exit"
+
+[node name="No" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 24.0
+margin_right = 216.0
+margin_bottom = 44.0
+
+[node name="Sprite" type="Sprite" parent="No"]
+
+[node name="Label" type="Label" parent="No"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "x"
+
+[node name="instructions" type="Button" parent="."]
+margin_left = 56.0
+margin_top = 48.0
+margin_right = 96.0
+margin_bottom = 68.0
+
+[node name="instructions" type="Label" parent="instructions"]
+margin_left = -16.0
+margin_right = 60.0
+margin_bottom = 14.0
+text = "instructions"
+
+[connection signal="button_up" from="Yes" to="." method="_on_Yes_button_up"]
+[connection signal="button_up" from="No" to="." method="_on_No_button_up"]
+[connection signal="button_up" from="instructions" to="." method="_on_instructions_button_up"]
